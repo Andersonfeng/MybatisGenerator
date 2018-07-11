@@ -43,6 +43,9 @@
 
             <!-- 从数据库返回的值被清理前后的空格 -->
             <property name="trimStrings" value="true"/>
+                
+            <!--生成的PO类继承某个类-->
+            <property name="rootClass" value="com.southcn.common.entity.BaseEntity"/>
         </javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
         <!--<sqlMapGenerator targetPackage="com.hfocean.uavportal.airspace.api.mapper"-->
