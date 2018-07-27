@@ -9,10 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mapper.version>3.3.9</mapper.version>
-        <mysql.version>5.1.37</mysql.version>
-        <generator.version>1.3.5</generator.version>
-        <itfsw.version>1.0.19</itfsw.version>
+        <mapper.version>RELEASE</mapper.version>
+        <mysql.version>RELEASE</mysql.version>
+        <generator.version>1.3.7</generator.version>
+        <itfsw.version>RELEASE</itfsw.version>
     </properties>
 
     <dependencies>
