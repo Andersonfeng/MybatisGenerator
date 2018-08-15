@@ -17,9 +17,15 @@
         </plugin>
 
         <!--自定义注释插件 -->
-        <plugin type="com.itfsw.mybatis.generator.plugins.CommentPlugin">
+        <!--<plugin type="com.itfsw.mybatis.generator.plugins.CommentPlugin">-->
             <!--自定义模板路径 -->
-            <property name="template" value="src/main/resources/mybatis-generator-comment.ftl"/>
+            <!--<property name="template" value="src/main/resources/mybatis-generator-comment.ftl"/>-->
+        <!--</plugin>-->
+
+        <plugin type="com.itfsw.mybatis.generator.plugins.TableRenamePlugin">
+        <!-- 改类名,用domainObjectRenamingRule属性会有驼峰消失的bug -->
+        <property name="searchString" value="^Apply"/>
+        <property name="replaceString" value=""/>
         </plugin>
 
         <commentGenerator>
