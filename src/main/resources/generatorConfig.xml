@@ -34,9 +34,9 @@
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://*"
-                        userId="*"
-                        password="*">
+                        connectionURL="jdbc:mysql://rm-devnfappout.mysql.rds.aliyuncs.com:3306/nfplus-apply"
+                        userId="nfplus_apply"
+                        password="j)Djo2lD12j8c">
         </jdbcConnection>
 
 
@@ -75,9 +75,10 @@
         <!--</javaClientGenerator>-->
 
         <!-- 指定数据库表 -->
-        <table tableName="vt_%">
+        <table tableName="Apply_%">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-            <domainObjectRenamingRule searchString="^Vt" replaceString=""/>
+            <!--domainObjectRenamingRule会有驼峰消失的bug-->
+            <!--<domainObjectRenamingRule searchString="^Apply" replaceString=""/>-->
         </table>
 
     </context>
