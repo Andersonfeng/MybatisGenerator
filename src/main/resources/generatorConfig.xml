@@ -23,7 +23,7 @@
         <!--</plugin>-->
 
         <!--<plugin type="com.itfsw.mybatis.generator.plugins.TableRenamePlugin">-->
-         <!--改类名,用domainObjectRenamingRule属性会有驼峰消失的bug -->
+         <!--改类名,用1.3.7以上版本generator,domainObjectRenamingRule属性会有驼峰消失的bug -->
         <!--<property name="searchString" value="^Apply"/>-->
         <!--<property name="replaceString" value=""/>-->
         <!--</plugin>-->
@@ -33,10 +33,10 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
-        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://*:3306/nfplus-apply?nullCatalogMeansCurrent=true"
-                        userId="*"
-                        password="*">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://rm-devnfappout.mysql.rds.aliyuncs.com:3306/nfplus-apply"
+                        userId="nfplus_apply"
+                        password="j)Djo2lD12j8c">
         </jdbcConnection>
 
 
