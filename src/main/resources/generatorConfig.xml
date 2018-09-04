@@ -16,14 +16,24 @@
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
         </plugin>
 
+        <!--自动为entity生成swagger2文档-->
+        <plugin type="com.mybatis.generator.plugins.GeneratorSwaggerAnnotation">
+            <!--是否生成@apiModel注解-->
+            <property name="apiModel" value="true"/>
+            <!--@ApiModelProperty注解中是否需要带java属性-->
+            <!--<property name="addJavaProperty" value="true"/>-->
+            <!--@ApiModelProperty注解中是否要带数据库字段注释-->
+            <property name="addRemarks" value="true"/>
+        </plugin>
+
         <!--自定义注释插件 -->
         <!--<plugin type="com.itfsw.mybatis.generator.plugins.CommentPlugin">-->
-            <!--自定义模板路径 -->
-            <!--<property name="template" value="src/main/resources/mybatis-generator-comment.ftl"/>-->
+        <!--自定义模板路径 -->
+        <!--<property name="template" value="src/main/resources/mybatis-generator-comment.ftl"/>-->
         <!--</plugin>-->
 
         <!--<plugin type="com.itfsw.mybatis.generator.plugins.TableRenamePlugin">-->
-         <!--改类名,用1.3.7以上版本generator,domainObjectRenamingRule属性会有驼峰消失的bug -->
+        <!--改类名,用1.3.7以上版本generator,domainObjectRenamingRule属性会有驼峰消失的bug -->
         <!--<property name="searchString" value="^Apply"/>-->
         <!--<property name="replaceString" value=""/>-->
         <!--</plugin>-->
@@ -34,9 +44,9 @@
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://rm-devnfappout.mysql.rds.aliyuncs.com:3306/nfplus-apply"
-                        userId="nfplus_apply"
-                        password="j)Djo2lD12j8c">
+                        connectionURL="jdbc:*"
+                        userId="*"
+                        password="*">
         </jdbcConnection>
 
 
@@ -47,7 +57,7 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="com.southcn.apply.common.po"
+        <javaModelGenerator targetPackage="com.southcn.nfplus.vote.entity"
                             targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
@@ -56,28 +66,25 @@
             <property name="trimStrings" value="true"/>
 
             <!--生成的PO类继承某个类-->
-            <!--<property name="rootClass" value="com.southcn.common.entity.BaseEntity"/>-->
+            <property name="rootClass" value="com.southcn.common.entity.BaseEntity"/>
         </javaModelGenerator>
 
 
-        <!-- targetProject:mapper映射文件生成的位置 -->
-        <!--<sqlMapGenerator targetPackage="com.hfocean.uavportal.airspace.api.mapper"-->
-        <!--targetProject="src/main/java">-->
-        <!--&lt;!&ndash; enableSubPackages:是否让schema作为包的后缀 &ndash;&gt;-->
+        <!--targetProject:mapper映射文件生成的位置 -->
+        <!--<sqlMapGenerator targetPackage="com.hfocean.uavportal.airspace.api.mapper" targetProject="src/main/java">-->
+        <!-- enableSubPackages:是否让schema作为包的后缀 -->
         <!--<property name="enableSubPackages" value="false"/>-->
         <!--</sqlMapGenerator>-->
-        <!--&lt;!&ndash; targetPackage：mapper接口生成的位置 &ndash;&gt;-->
-        <!--<javaClientGenerator type="XMLMAPPER"-->
-        <!--targetPackage="com.anderson.mapper"-->
-        <!--targetProject="src/main/java">-->
-        <!--&lt;!&ndash; enableSubPackages:是否让schema作为包的后缀 &ndash;&gt;-->
+        <!-- targetPackage：mapper接口生成的位置 -->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.anderson.mapper" targetProject="src/main/java">-->
+        <!-- enableSubPackages:是否让schema作为包的后缀 -->
         <!--<property name="enableSubPackages" value="false"/>-->
         <!--</javaClientGenerator>-->
 
         <!-- 指定数据库表 -->
-        <table tableName="Apply_%">
+        <table tableName="Vt%">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-            <domainObjectRenamingRule searchString="^Apply" replaceString=""/>
+            <domainObjectRenamingRule searchString="^Vt" replaceString=""/>
         </table>
 
     </context>
