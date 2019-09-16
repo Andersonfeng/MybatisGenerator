@@ -9,9 +9,9 @@
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
 
         <!--生成toString-->
-        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!--        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>-->
 
-        <!--注解-->
+        <!--注释-->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
         </plugin>
@@ -21,10 +21,23 @@
             <!--是否生成@apiModel注解-->
             <property name="apiModel" value="true"/>
             <!--@ApiModelProperty注解中是否需要带java属性-->
-            <!--<property name="addJavaProperty" value="true"/>-->
+            <property name="addJavaProperty" value="true"/>
             <!--@ApiModelProperty注解中是否要带数据库字段注释-->
             <property name="addRemarks" value="true"/>
         </plugin>
+
+        <!--去掉getter方法-->
+        <plugin type="com.mybatis.generator.plugins.GeneratorIgnoreGetter"/>
+
+        <!--去掉setter方法-->
+        <plugin type="com.mybatis.generator.plugins.GeneratorIgnoreSetter"/>
+
+        <!--添加类注解和依赖-->
+        <plugin type="com.mybatis.generator.plugins.GeneratorClassAnnotation">
+            <property name="Data" value="lombok.Data"/>
+            <property name="ToString" value="lombok.ToString"/>
+        </plugin>
+
 
         <!--自定义注释插件 -->
         <!--<plugin type="com.itfsw.mybatis.generator.plugins.CommentPlugin">-->
@@ -57,7 +70,7 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="com.southcn.nfplus.vote.entity"
+        <javaModelGenerator targetPackage="com.anderson.news.po"
                             targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
@@ -66,7 +79,7 @@
             <property name="trimStrings" value="true"/>
 
             <!--生成的PO类继承某个类-->
-            <property name="rootClass" value="com.southcn.common.entity.BaseEntity"/>
+            <!--            <property name="rootClass" value="com.southcn.common.entity.BaseEntity"/>-->
         </javaModelGenerator>
 
 
